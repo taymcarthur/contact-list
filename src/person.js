@@ -1,43 +1,34 @@
 import React from 'react'
-
-const styles = {
-	backButton: {
-		position:'absolute',
-		top:10,
-		left:10
-	},
-	imageContainer: {
-		background: '#81bc39',
-		textAlign: 'center',
-		position:'realtive' 
-	}
-}
+import contacts from './contacts.json'
+import './App.css'
 
 export default React.createClass({
-	getInitialState() {
-		return {
-			contact: contacts.filter(person=>{
-				return Number(person.id) === Number(this.props.match.params.personId)
-
-			})[0]
-		}
-	},
-	handleBack (e) {
-		e.preventDefault()
-		this.props.history.goBack()
-	},
-	render () {
-		var contact = this.state.contact
-		return (
-			<div>
-			<div style={styles.imageContainer}>
-			<button style={style.backButton} onClick={this.handleBack}>Back</button>
-			<img src={contact.picture.medium} />
-			</div>
-			<ul>
-				<li>{contact.name.first} {contact.name.last}</li>
-
-			<h1>{this.props.match.params.personId}</h1>
-			</div>
-		)
-	}
+  getInitialState(){
+    return {
+      contact: contacts.filter(person=>{
+        return Number(person.id) === Number(this.props.match.params.personId)
+      })[0]
+    }
+  },
+  handleBack(e){
+    e.preventDefault()
+    this.props.history.goBack()
+  },
+  render(){
+    var contact = this.state.contact
+    return(
+      <div>
+        <div className='img'>
+          <button className="back" onClick={this.handleBack}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
+          <img alt={contact.name.first} src={contact.picture.large} className='personImg' />
+        </div>
+        <ul className='personInfo'>
+          <li><i className="fa fa-user" aria-hidden="true"></i>{contact.name.first} {contact.name.last}</li>
+          <li><i className="fa fa-envelope" aria-hidden="true"></i>{contact.email}</li>
+          <li><i className="fa fa-mobile" aria-hidden="true"></i>{contact.phone}</li>
+          <li><i className="fa fa-globe" aria-hidden="true"></i>{contact.location.city}, {contact.location.state}</li>
+        </ul>
+      </div>
+    )
+  }
+})
