@@ -7,15 +7,18 @@ import './App.css'
 export default React.createClass({
 	render () {
 		return (
-			<div>
+			<div className="mainContainer">
+      <div className="header">
         <h2>My Peeps</h2>
+        </div>
         <ul>
         {contacts.map(contact=>(
-        	<Link key={'clist' + contact.id} to={'/person/' + contact.id}>
-            <li><img alt={contact.name.first + contact.name.last} src={contact.picture.thumbnail} /> {contact.name.first} {contact.name.last}
+          <Link className="Name" key={'clist' + contact.id} to={'/person/' + contact.id}>
+            <li className="eachContact">
+              <img className="circle" alt={contact.name.first + contact.name.last} src={contact.picture.thumbnail} /><span>{contact.name.first} {contact.name.last}</span>
             </li>
           </Link>
-          ))}
+        ))}
           </ul>
         </div>
       )

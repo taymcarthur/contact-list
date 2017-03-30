@@ -6,7 +6,7 @@ export default React.createClass({
   getInitialState(){
     return {
       contact: contacts.filter(person=>{
-        return Number(person.id) === Number(this.props.match.params.personId)
+        return Number(person.id) === Number(this.props.match.params.personId) //params means the paramaater we are searching for is ID. This function means if the id has a #, return the id 
       })[0]
     }
   },

@@ -1,24 +1,94 @@
-.App {
-  text-align: center;
+.header {
+height:50px;
+background:green;
+border:3px;
+line-height: 50px;
+padding-left:10px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.mainContainer {
+  width:500px;
+  margin:auto;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+h2 {
+  color:white;
 }
 
-.App-intro {
-  font-size: large;
+ul {
+  list-style-type: none;
+  padding-left:0px;
+
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.eachContact {
+  width:500px;
+  border-bottom:2px solid #ccc;
+  height:50px;
+}
+
+.circle {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius:50%;
+  margin-right:20px;
+}
+
+.Name {
+  text-decoration:none;
+  font-size: 20px;
+  font-style: bold;
+
+}
+
+span {
+  position: relative;
+  bottom: 17px;
+}
+
+a {
+  display:block;
+  line-height:50px;
+  display:flex;
+  color:#333;
+}
+
+.img {
+  background: rgb(143, 180, 72);
+  height: 200px;
+}
+
+.back {
+  border:none;
+  background: rgb(143, 180, 72);
+  outline: none;
+  position: relative;
+  bottom: 120px;
+  left: 20px;
+}
+
+.personImg {
+  border-radius: 50%;
+  margin-left: 150px;
+  margin-top: 30px;
+}
+
+.personInfo {
+  padding: 0;
+}
+
+.personInfo li {
+  border-bottom: 1px solid #ccc;
+  padding: 15px 0;
+  line-height: 20px;
+}
+
+.fa-arrow-left {
+  font-size: 20px;
+}
+
+.personInfo i {
+  width: 30px;
+  height: 30px;
 }
